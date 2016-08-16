@@ -44,3 +44,49 @@ languages = {'JavaScript': 'P',
              'Latin': 'N',
              'Romanian': 'N',
              'English': 'N'}
+
+def divide_list(dictionary):
+    dictionary_two = {}
+    dictionary_one = {}
+    for key in dictionary:
+        if languages[key] == 'P':
+            dictionary_two[key] = 'P'
+        if languages[key] == 'N':
+            dictionary_one[key] = 'N'
+    return dictionary_one, dictionary_two
+
+x, y = divide_list(languages)
+
+def printing(dictionary):
+    for key in sorted(dictionary.keys()):
+        print(key)
+
+printing(x)
+priting(y)
+
+def sort1(d):
+    lst = sorted(sorted(d), key=d.__getitem__)
+    print("1:")
+    for x in lst:
+        print("\t" + x)
+
+sort1(languages)
+
+
+def sort2(d):
+    lst = sorted(d, key=len)
+    print('2:')
+    for item in lst:
+        print("\t" + item)
+
+sort2(languages)
+
+def sort3(d):
+    lst = sorted(sorted(d), key=last_char, reverse=True)
+    #sorted(d) only shows the dictionary keys, not the values
+    print("3:")
+    for item in lst:
+        print("\t" + item)
+
+def last_char(d):
+    return string[-1].lower()

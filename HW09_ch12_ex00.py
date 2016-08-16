@@ -13,7 +13,11 @@
 # Imports
 
 # Body
-
+def sumall(*args):
+    t = 0
+    for n in args:
+        t += sum((n, 0))
+    return t
 
 ##############################################################################
 def main():   # DO NOT CHANGE BELOW
